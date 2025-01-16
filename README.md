@@ -10,8 +10,10 @@ This document presents a chain of tools that are useful for bug bounty hunting. 
 ```bash
 subfinder -d example.com | dnsx -resp-only -silent > resolved_subdomains.txt
 
-### 2. **Discovering Live Hosts**
+### 2. Discovering Live Hosts
+```bash
 cat resolved_subdomains.txt | httpx -silent -status-code -o live_hosts.txt
+
 
 
 
