@@ -1,3 +1,21 @@
+# Bug Bounty Hunting Toolchains
+
+This document presents a chain of tools that are useful for bug bounty hunting. These chains assist in automating tasks during the reconnaissance phase and vulnerability discovery.
+
+---
+
+## Recon Chains
+
+### 1. **Collecting and Resolving Subdomains**
+```bash
+subfinder -d example.com | dnsx -resp-only -silent > resolved_subdomains.txt
+
+### 2. **Discovering Live Hosts**
+cat resolved_subdomains.txt | httpx -silent -status-code -o live_hosts.txt
+
+
+
+
 # one-liner-chains
 Here is presented a chains of tools that are useful for bug-bounty hunting. These chains are helpful for task automation during the reconnaissance phase and vulnerability discovery.
 
