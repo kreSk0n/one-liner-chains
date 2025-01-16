@@ -35,3 +35,16 @@ cat live_hosts.txt | gf redirect | qsreplace 'https://evil.com' | httpx -silent
 Collecting e-mails for phishing attacks.
 theHarvester -d example.com -b all -f emails.txt
 
+# Bug Bounty Hunting Toolchains
+
+Этот документ представляет собой набор цепочек инструментов, полезных для охоты на баги. Эти цепочки помогают автоматизировать задачи на этапе разведки и обнаружения уязвимостей.
+
+---
+
+## Recon Chains
+
+### 1. **Сбор и разрешение поддоменов**
+```bash
+subfinder -d example.com | dnsx -resp-only -silent > resolved_subdomains.txt
+
+
