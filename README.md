@@ -1,15 +1,15 @@
 # one-liner-chains
 Here is presented a chains of tools that are useful for bug-bounty hunting. These chains are helpful for task automation during the reconnaissance phase and vulnerability discovery.
 
-RECON Chains: 
-Collecting and Resolving subdomains.
-subfinder -d example.com | dnsx -resp-only -silent > resolved_subdomains.txt
+###RECON Chains: 
+##Collecting and Resolving subdomains.
+'subfinder -d example.com | dnsx -resp-only -silent > resolved_subdomains.txt
 
-Discovering Live hosts.
-cat resolved_subdomains.txt | httpx -silent -status-code -o live_hosts.txt
+''Discovering Live hosts.
+"cat resolved_subdomains.txt | httpx -silent -status-code -o live_hosts.txt
 
-Checking for Subdomain Takeover vulnerability.
-subfinder -d example.com | dnsx -resp-only | subzy -targets 
+*Checking for Subdomain Takeover vulnerability.*
+**subfinder -d example.com | dnsx -resp-only | subzy -targets** 
 
 Searching parameters for URL analysis.
 gau -o urls.txt example.com && cat urls.txt | qsreplace | tee parameters.txt
